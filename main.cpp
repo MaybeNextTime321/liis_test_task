@@ -47,7 +47,7 @@ int main() {
 
 	api_status = root["api_info"]["status"].asString();
 
-	std::cout << api_status << "\n";
+	std::cout <<"Get api status: " <<  api_status << "\n";
 	for(int i=0; i < root["items"][0]["readings"].size(); ++i){
 
 		if(auto search_result = FIND_DEVICE_ID.find(root["items"][0]["readings"][i]["station_id"].asString());
@@ -60,7 +60,7 @@ int main() {
 
 
 	for(std::pair<std::string,double> single_item : result) {
-		std::cout <<single_item.first << " " << single_item.second << std::endl;
+		std::cout << "Get device data " << single_item.first << " " << single_item.second << std::endl;
 	}
 
 
